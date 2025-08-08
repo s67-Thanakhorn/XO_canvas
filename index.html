@@ -20,6 +20,8 @@
 
         let turn = 'X' ;
 
+        let canClick = true;
+
         function turnChange() {
 
             // console.log(turn);
@@ -257,7 +259,7 @@
 
                 turnChange();
                 alert(turn + " wins");
-
+                canClick = false;
             }
 
         }
@@ -285,12 +287,16 @@
 
         c.addEventListener("click", function(e) {
 
-            let x = e.offsetX;
-            let y = e.offsetY;
+            if(canClick) {
 
-            console.log(table);
+                let x = e.offsetX;
+                let y = e.offsetY;
 
-            positionCheck(x,y);
+                console.log(table);
+
+                positionCheck(x,y);
+
+            }
 
         });
 
@@ -299,6 +305,7 @@
             ctx.clearRect(0,0,c.width,c.height);
             setup();
             table.fill('');
+            canClick = true
 
         });
         
