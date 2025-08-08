@@ -212,7 +212,7 @@
             // O ชนะ
 
             // แนวนอน
-            if(table[0] == 'O' && table[1] == 'O' && table[2] == 'O'){
+            else if(table[0] == 'O' && table[1] == 'O' && table[2] == 'O'){
 
                 return true
 
@@ -249,7 +249,6 @@
 
             }
 
-            
         }
 
         function isWin(winValue) {
@@ -259,6 +258,12 @@
                 turnChange();
                 alert(turn + " wins");
                 canClick = false;
+
+            }else if(!table.includes('')) {
+
+                alert("draw");
+                canClick = false;
+
             }
 
         }
