@@ -303,6 +303,8 @@
         resetBtn.addEventListener("click",function() {
 
             ctx.clearRect(0,0,c.width,c.height);
+
+            turn = 'X';
             setup();
             table.fill('');
             canClick = true
