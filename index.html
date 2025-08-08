@@ -6,11 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas id="myCanvas" width="420px" height="420px" style="border: 2px solid black;"></canvas>
+
+    <canvas id="myCanvas" width="420px" height="420px" style="border: 2px solid black;"></canvas><br>
+    <button id="reset" style="padding: 10px;">reset</button>
 
     <script>
 
         const c = document.getElementById("myCanvas");
+        const resetBtn = document.getElementById("reset");
         const ctx = c.getContext("2d");
 
         const table = ['','','','','','','','',''];
@@ -176,9 +179,17 @@
             let x = e.offsetX;
             let y = e.offsetY;
 
-            console.log(x,y);
+            console.log(table);
 
             positionCheck(x,y);
+
+        });
+
+        resetBtn.addEventListener("click",function() {
+
+            ctx.clearRect(0,0,c.width,c.height);
+            setup();
+            table.fill('');
 
         });
         
