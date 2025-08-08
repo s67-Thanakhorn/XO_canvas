@@ -60,10 +60,82 @@
 
         function positionCheck(x,y) {
 
+            // table[0]
+
             if( x >= 0 && x <= 140 && y >= 0 && y <= 140 && table[0] == ''){
 
                 draw(70,70);
                 table[0] = turn;
+
+            }
+
+            //table[1]
+
+            if( x >= 180 && x <= 280 && y >= 0 && y <= 140 && table[1] == ''){
+
+                draw(210,70);
+                table[1] = turn;
+
+            }
+
+            //table[2]
+
+            if( x >= 280 && x <= 400 && y >= 0 && y <= 140 && table[2] == ''){
+
+                draw(350,70);
+                table[2] = turn;
+
+            }
+
+            //table[3]
+
+            if( x >= 0 && x <= 140 && y >= 140 && y <= 280 && table[3] == ''){
+
+                draw(70,210);
+                table[3] = turn;
+
+            }
+            
+            //table[4]
+
+            if( x >= 140 && x <= 280 && y >= 140 && y <= 280 && table[4] == ''){
+
+                draw(210,210);
+                table[4] = turn;
+
+            }
+            //table[5]
+
+            if( x >= 280 && x <= 420 && y >= 140 && y <= 280 && table[5] == ''){
+
+                draw(350,210);
+                table[5] = turn;
+
+            }
+            //table[6]
+
+            if( x >= 0 && x <= 140 && y >= 280 && y <= 420 && table[6] == ''){
+
+                draw(70,350);
+                table[6] = turn;
+
+            }
+
+            //table[7]
+
+            if( x >= 140 && x <= 280 && y >= 280 && y <= 420 && table[7] == ''){
+
+                draw(210,350);
+                table[7] = turn;
+
+            }
+
+            //table[8]
+
+            if( x >= 280 && x <= 420 && y >= 280 && y <= 420 && table[8] == ''){
+
+                draw(350,350);
+                table[8] = turn;
 
             }
 
