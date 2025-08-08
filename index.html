@@ -19,7 +19,7 @@
 
         function turnChange() {
 
-            console.log(turn);
+            // console.log(turn);
 
             if (turn == 'X') {
 
@@ -28,6 +28,42 @@
             }else {
 
                 turn = 'X';
+
+            }
+
+        }
+
+        function draw(x,y) {
+
+            if(turn == 'O') {
+
+                console.log('yes');
+
+                ctx.beginPath();
+                ctx.arc(x,y,50,0,2*Math.PI);
+                ctx.stroke();
+
+            }else {
+
+                ctx.beginPath();
+                ctx.moveTo(x-30,y-30);
+                ctx.lineTo(x+30,y+30);
+
+                ctx.moveTo(x+30,y-30);
+                ctx.lineTo(x-30,y+30);
+
+                ctx.stroke();
+
+            }
+
+        }
+
+        function positionCheck(x,y) {
+
+            if( x >= 0 && x <= 140 && y >= 0 && y <= 140){
+
+                draw(70,70);
+                table[0] = turn;
 
             }
 
@@ -54,8 +90,14 @@
 
         setup();
 
-        c.addEventListener("click", function() {
+        c.addEventListener("click", function(e) {
 
+            let x = e.offsetX;
+            let y = e.offsetY;
+
+            console.log(x,y);
+
+            positionCheck(x,y);
             turnChange();
 
         });
